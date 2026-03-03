@@ -236,6 +236,8 @@
   // ========================================
 
   function initCustomCursor() {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
     const cursor = document.createElement('img');
     cursor.src = (document.querySelector('link[rel="icon"]')?.href) || '';
     cursor.className = 'custom-cursor';

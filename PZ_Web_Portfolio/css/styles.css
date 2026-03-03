@@ -472,7 +472,7 @@ h3 {
 
 @media (max-width: 768px) {
   .site-intro {
-    padding: 7rem 1.5rem 3rem;
+    display: none;
   }
 
   .intro-headline {
@@ -558,6 +558,15 @@ h3 {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .project-card {
+    opacity: 1;
+    animation: none;
+  }
+
+  body, a, button, * {
+    cursor: auto !important;
   }
 }
 
