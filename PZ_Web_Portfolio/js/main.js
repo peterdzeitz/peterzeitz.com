@@ -46,10 +46,12 @@
       card.href = `projects/${project.id}/`;
       card.className = 'project-card';
       card.innerHTML = `
-        <img src="projects/${project.id}/${project.thumbnail}" alt="${project.title}" loading="lazy">
+        <div class="project-card-image-wrap">
+          <img src="projects/${project.id}/${project.thumbnail}" alt="${project.title}" loading="lazy">
+        </div>
         <div class="project-card-overlay">
-          <span class="project-card-category">${project.category}</span>
           <h3 class="project-card-title">${project.title}</h3>
+          <span class="project-card-category">${project.category}</span>
         </div>
       `;
       grid.appendChild(card);
