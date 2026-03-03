@@ -100,6 +100,10 @@
 
       // Initialize lightbox - no path prefix needed
       initLightbox(project.images, '');
+
+      // Initialize gallery reveal
+      initGalleryReveal();
+
     }
   }
 
@@ -172,6 +176,39 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') showPrev();
       if (e.key === 'ArrowRight') showNext();
+    });
+  }
+
+  // ========================================
+  // Gallery Parallax
+  // ========================================
+
+  function initGalleryReveal() {
+    const items = document.querySelectorAll('.gallery-item');
+    if (!items.length) return;
+
+    // Set initial state via JS so images aren't hidden if JS fails
+    items.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0 });
+
+    // Delay observer slightly so initial styles are applied first
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        items.forEach(item => observer.observe(item));
+      });
     });
   }
 
