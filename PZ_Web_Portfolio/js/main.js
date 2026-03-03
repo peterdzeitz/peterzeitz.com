@@ -230,6 +230,72 @@
   }
 
   // ========================================
+  // Custom Cursor
+  // ========================================
+
+  function initCustomCursor() {
+    const cursor = document.createElement('img');
+    cursor.src = (document.querySelector('link[rel="icon"]')?.href) || '';
+    cursor.style.cssText = 'position:fixed;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:99999;image-rendering:pixelated;';
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX - 9;
+      mouseY = e.clientY - 9;
+    });
+
+    function animate() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  // ========================================
+  // Page Transitions
+  // ========================================
+
+  function initPageTransitions() {
+    const overlay = document.querySelector('.page-transition-overlay');
+    if (!overlay) return;
+
+    // Fade overlay out on page load
+    requestAnimationFrame(() => {
+      overlay.classList.add('hidden');
+    });
+
+    // Intercept internal link clicks for fade-out transition
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+
+      // Skip external links, anchors, mailto, and javascript links
+      if (!href ||
+          href.startsWith('#') ||
+          href.startsWith('mailto:') ||
+          href.startsWith('javascript:') ||
+          link.target === '_blank' ||
+          href.startsWith('http')) return;
+
+      e.preventDefault();
+      overlay.classList.remove('hidden');
+      overlay.classList.add('active');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    });
+  }
+
+  // ========================================
   // Initialize
   // ========================================
 
@@ -237,6 +303,8 @@
     renderProjectGrid();
     renderProjectPage();
     initHeaderScroll();
+    initPageTransitions();
+    initCustomCursor();
   });
 
 })();
