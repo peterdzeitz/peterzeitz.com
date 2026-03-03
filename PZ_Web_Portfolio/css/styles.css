@@ -197,11 +197,11 @@ h3 {
 }
 
 .project-card:hover .project-card-overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: none;
 }
 
 .project-card-title {
-  color: #fff;
+  color: #1a1a1a;
   font-size: 1.5rem;
   font-weight: 500;
   opacity: 0;
@@ -210,7 +210,7 @@ h3 {
 }
 
 .project-card-category {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(26, 26, 26, 0.6);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
