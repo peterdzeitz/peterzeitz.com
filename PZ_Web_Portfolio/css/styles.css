@@ -470,7 +470,7 @@ h3 {
    Responsive
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .site-intro {
     display: none;
   }
@@ -629,4 +629,69 @@ h3 {
 .page-transition-overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+/* ========================================
+   Marquee Demos
+   ======================================== */
+
+.marquee-demo {
+  background: #fff;
+  padding: 6rem 0 0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.footer-icons a {
+  color: #1a1a1a;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.footer-icons a:hover {
+  opacity: 1;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
+.marquee-track span {
+  display: inline;
+}
+
+/* Simple marquee — continuous left scroll */
+.marquee-simple {
+  animation: marquee-scroll-left 20s linear infinite;
+}
+
+@keyframes marquee-scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========================================
+   Marquee Responsive
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .marquee-track {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
 }
