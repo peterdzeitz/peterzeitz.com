@@ -217,7 +217,7 @@
     },
     {
       "id": "hbr",
-      "title": "HBR",
+      "title": "Harvard Business Review",
       "date": "2020",
       "category": "Editorial",
       "description": "Editorial design work exploring typography, layout, and visual storytelling for Harvard Business Review.",
@@ -235,12 +235,11 @@
       "date": "2019",
       "category": "Branding",
       "description": "Brand identity and web design for Ploom, featuring a modern aesthetic with bold typography and clean visual language.",
-      "thumbnail": "Ploom_Branding_Web.png",
+      "thumbnail": "Ploom_Chrome.png",
       "images": [
         "Ploom_Noise_Web.png",
         "Ploom_Branding_Web.png",
-        "Ploom_Web_Mock_Clean.png",
-        "Ploom_Chrome.png"
+        "Ploom_Web_Mock_Clean.png"
       ]
     },
     {
