@@ -46,10 +46,12 @@
       card.href = `projects/${project.id}/`;
       card.className = 'project-card';
       card.innerHTML = `
-        <img src="projects/${project.id}/${project.thumbnail}" alt="${project.title}" loading="lazy">
+        <div class="project-card-image-wrap">
+          <img src="projects/${project.id}/${project.thumbnail}" alt="${project.title}" loading="lazy">
+        </div>
         <div class="project-card-overlay">
-          <span class="project-card-category">${project.category}</span>
           <h3 class="project-card-title">${project.title}</h3>
+          <span class="project-card-category">${project.category}</span>
         </div>
       `;
       grid.appendChild(card);
@@ -230,6 +232,92 @@
   }
 
   // ========================================
+  // Custom Cursor
+  // ========================================
+
+  function initCustomCursor() {
+    const cursor = document.createElement('img');
+    cursor.src = (document.querySelector('link[rel="icon"]')?.href) || '';
+    cursor.className = 'custom-cursor';
+    cursor.style.cssText = 'position:fixed;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:99999;image-rendering:pixelated;opacity:0;';
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    // Show cursor on first interaction
+    function showCursor(e) {
+      mouseX = e.clientX - 9;
+      mouseY = e.clientY - 9;
+      cursorX = mouseX;
+      cursorY = mouseY;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      cursor.style.opacity = '1';
+      document.removeEventListener('mousemove', showCursor);
+      document.addEventListener('mousemove', trackCursor);
+    }
+
+    function trackCursor(e) {
+      mouseX = e.clientX - 9;
+      mouseY = e.clientY - 9;
+    }
+
+    document.addEventListener('mousemove', showCursor);
+
+    function animate() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  // ========================================
+  // Page Transitions
+  // ========================================
+
+  function initPageTransitions() {
+    const overlay = document.querySelector('.page-transition-overlay');
+    if (!overlay) return;
+
+    // Fade overlay out after a brief delay so cursor:none has time to apply
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+    }, 100);
+
+    // Intercept internal link clicks for fade-out transition
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+
+      // Skip external links, anchors, mailto, and javascript links
+      if (!href ||
+          href.startsWith('#') ||
+          href.startsWith('mailto:') ||
+          href.startsWith('javascript:') ||
+          link.target === '_blank' ||
+          href.startsWith('http')) return;
+
+      e.preventDefault();
+      overlay.classList.remove('hidden');
+      overlay.classList.add('active');
+
+      // Hide custom cursor during transition
+      const cursorEl = document.querySelector('.custom-cursor');
+      if (cursorEl) cursorEl.style.opacity = '0';
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    });
+  }
+
+  // ========================================
   // Initialize
   // ========================================
 
@@ -237,6 +325,8 @@
     renderProjectGrid();
     renderProjectPage();
     initHeaderScroll();
+    initPageTransitions();
+    initCustomCursor();
   });
 
 })();
