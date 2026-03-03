@@ -236,16 +236,32 @@
   function initCustomCursor() {
     const cursor = document.createElement('img');
     cursor.src = (document.querySelector('link[rel="icon"]')?.href) || '';
-    cursor.style.cssText = 'position:fixed;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:99999;image-rendering:pixelated;';
+    cursor.className = 'custom-cursor';
+    cursor.style.cssText = 'position:fixed;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:99999;image-rendering:pixelated;opacity:0;';
     document.body.appendChild(cursor);
 
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
-    document.addEventListener('mousemove', (e) => {
+    // Show cursor on first interaction
+    function showCursor(e) {
       mouseX = e.clientX - 9;
       mouseY = e.clientY - 9;
-    });
+      cursorX = mouseX;
+      cursorY = mouseY;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      cursor.style.opacity = '1';
+      document.removeEventListener('mousemove', showCursor);
+      document.addEventListener('mousemove', trackCursor);
+    }
+
+    function trackCursor(e) {
+      mouseX = e.clientX - 9;
+      mouseY = e.clientY - 9;
+    }
+
+    document.addEventListener('mousemove', showCursor);
 
     function animate() {
       cursorX += (mouseX - cursorX) * 0.15;
@@ -265,10 +281,10 @@
     const overlay = document.querySelector('.page-transition-overlay');
     if (!overlay) return;
 
-    // Fade overlay out on page load
-    requestAnimationFrame(() => {
+    // Fade overlay out after a brief delay so cursor:none has time to apply
+    setTimeout(() => {
       overlay.classList.add('hidden');
-    });
+    }, 100);
 
     // Intercept internal link clicks for fade-out transition
     document.addEventListener('click', (e) => {
@@ -288,6 +304,10 @@
       e.preventDefault();
       overlay.classList.remove('hidden');
       overlay.classList.add('active');
+
+      // Hide custom cursor during transition
+      const cursorEl = document.querySelector('.custom-cursor');
+      if (cursorEl) cursorEl.style.opacity = '0';
 
       setTimeout(() => {
         window.location.href = href;
