@@ -8,53 +8,43 @@
       "description": "Brand identity and marketing materials for Avalanche blockchain ecosystem, including summit event design, billboard campaigns, and digital assets.",
       "thumbnail": "AvaxnetworkMM_Laptop_LT-LWL-04.png",
       "images": [
-        "AvalancheSummit_.png",
-        "Summit_Poster.png",
-        "WallStreetBull_R1_Trans.png",
-        "KeychainSummit_MM_Billboard_BB-NYC-08 2.png",
-        "VisualGuidelines_.png",
-        "Avalanche_Imagery.png",
-        "Avalanche_GridSystem.png",
-        "Billboard_MM_Billboard_BB-NYC-08.png",
-        "ControlDigital_StreetMock.png",
-        "Core_GoogleAccount.png",
-        "Core_Web3_Billboards.png",
-        "Google_Core_Phone.png",
-        "GoogleCore_Login_Billboard.png",
-        "MM_Billboard_BB-NYC-08.png",
-        "MM_Screen_SC-NYC2-04.png",
-        "NYSUmmit_MM_Billboard_BB-NYC-08 2.png",
-        "Paradigms_MM_Billboard_BB-NYC-08 2.png",
-        "ParadigmBillboard copy.png",
-        "Yields_Billboard.png",
-        "tixbase_Free Billboard on the Streets Mockup.png",
-        "Summit_Home.png",
-        "NYC.png",
-        "NYCHome.png",
         "MacBook Pro 14.png",
-        "GradientGlass+PayStake.png",
-        "PayStake_Core.png",
-        "PayStake_Core-1.png",
-        "StakeOnCorePay.png",
+        "AvalancheBranding_Guidelines.gif",
+        "VisualGuidelines_.png",
         "Logo_1.png",
-        "Frame 1000004082.png",
-        "Frame 1000004083.png",
-        "Frame 1000004084.png",
-        "Frame 1984078876.png",
-        "66.png",
-        "67115d9583204ff65e3b3b50_Frame 62.webp",
-        "Preview (5).png",
-        "andretti-2-2.jpg",
-        "AVALANCHE_D1-7403972_07.55_SonyILCE-7M4_Z1Sgk46.webp",
-        "AVALANCHE_D1-7403972_07.55_SonyILCE-7M4_Z1Sgk46-1.webp",
-        "EPS813_141822_W6I0296-2048x2048-1.jpg",
-        "G2MHssHXEAAXGRS.jpg",
-        "G6M_47iWAAAeTwI.jpg",
-        "G6M_7IPXcAA6O2V.jpg",
-        "G6NAvxCWgAAOhOZ.jpg",
         "G7v0UFRWEAAV5kS.jpg",
-        "G7z7keKWgAA6P4M.jpg",
-        "GrizUubWgAAPOqR-1.jpg"
+        "G7z7keKWgAA6P4M.jpg"
+      ]
+    },
+    {
+      "id": "avalanche-core",
+      "title": "Core Wallet",
+      "date": "2024",
+      "category": "Branding",
+      "description": "Rebrand effort for Avalanche's native wallet, Core, including paid ad awareness campaign, feature releases and social assets.",
+      "thumbnail": "PayStake_Core.png",
+      "images": [
+        "Core_Crop.gif",
+        "MM_Screen_SC-NYC2-04.png",
+        "Google_Core_Phone.png",
+        "Billboard_MM_Billboard_BB-NYC-08.png",
+        "ControlDigital_StreetMock.png"
+      ]
+    },
+    {
+      "id": "avalanche-summit",
+      "title": "Avalanche Summit",
+      "date": "2024",
+      "category": "Event Design",
+      "description": "Event branding and promotional materials for Avalanche Summit, including billboard campaigns, venue design, and digital assets.",
+      "thumbnail": "67115d9583204ff65e3b3b50_Frame 62.webp",
+      "images": [
+        "AVAX_NYC.gif",
+        "AvalancheSummit_NYCBlack.png",
+        "Avalanche_London_InnovationHouse.png",
+        "AVALANCHE_D1-7403972_07.55_SonyILCE-7M4_Z1Sgk46-1.webp",
+        "GrizUubWgAAPOqR-1.jpg",
+        "67115d9583204ff65e3b3b50_Frame 62.webp"
       ]
     },
     {
@@ -65,7 +55,6 @@
       "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
       "thumbnail": "Hyperbolic.png",
       "images": [
-        "Hyperbolic.png",
         "Hyperbolic_AmbassadorAnnouncement.png",
         "Hyperbolic_AmbassadorAnnouncement-1.png",
         "Hyperbolic_AmbassadorAnnouncement-2.png",
@@ -87,55 +76,32 @@
       ]
     },
     {
-      "id": "spotify",
-      "title": "Spotify Platform",
-      "date": "2025",
-      "category": "Branding",
-      "description": "Design work for Spotify Platform, exploring visual concepts and brand applications across digital touchpoints.",
-      "thumbnail": "PlatformFinal.png",
-      "images": [
-        "PlatformFinal.png",
-        "Platform_Spotify.png",
-        "Platform2025.png",
-        "Platformcutout.png",
-        "Platform_Backfinal.png",
-        "Platform_Bluefinal.png",
-        "Platform_Back copy.png",
-        "Spotify_FrontFinal.png",
-        "Spotify_FrontFinal_blue.png",
-        "Spotify_FrontFinal_graypurple.png",
-        "Spotify_FrontFinal_orangewhite.png",
-        "Spotify_FrontFinalblue.png",
-        "Spotify_FrontFinalbluegray.png",
-        "Spotify_FrontFinallightblue.png",
-        "Spotify_FrontFinalorange.png",
-        "Platf4rm_Podcast_Options.png"
-      ]
-    },
-    {
       "id": "vimeo",
       "title": "Vimeo",
       "date": "2023",
       "category": "Digital",
       "description": "Design work for Vimeo OTT platform, including channel templates, page layouts, and promotional materials.",
-      "thumbnail":  "Preview (6).png",
+      "thumbnail": "Vimeo_LayoutLarge.png",
       "images": [
-        "Vimeo_Layout.png",
-        "Vimeo_LayoutLarge.png",
-        "Vimeo_Crop.png",
-        "ALL-INONE_vimeo.png",
-        "OTT Page_CreateOwnChannel.png",
-        "OutsidetheFrame_Vimeo.png",
+        "Vimeo_Outbound.gif",
         "outsidetheFrame.png",
-        "Template - OTT Page.png",
-        "Template - OTT Page - PPV.png",
-        "Template - OTT Page - Youtube.png",
-        "Template - OTTCreateChannel.png",
-        "Preview.png",
         "Preview (4).png",
-        "IMG_1180.JPEG",
-        "Screenshot 2026-01-23 at 2.12.27 PM.png",
-        "Screenshot 2026-01-23 at 4.42.34 PM.png"
+        "Preview.png",
+        "Vimeo_LayoutLarge.png",
+        "Inbound23.gif"
+      ]
+    },
+    {
+      "id": "spotify",
+      "title": "Spotify Platform",
+      "date": "2025",
+      "category": "Branding",
+      "description": "Design work for Spotify Platform, exploring visual concepts and brand applications across digital touchpoints.",
+      "thumbnail": "Spotify_Podcast.gif",
+      "images": [
+        "PlatformFinal.png",
+        "Platform_Back copy.png",
+        "Spotify_Podcast.gif"
       ]
     },
     {
@@ -158,22 +124,13 @@
       "description": "Brand identity and web design for Tripexpert, a travel recommendation platform featuring expert reviews and venue discovery.",
       "thumbnail": "Tripexpert_BizCard.png",
       "images": [
+        "Tripexpert_Posters_ Mock.png",
+        "Triper_expert_Badges.png",
         "Tripexpert_BizCard.png",
-        "Tripexpert_BizCard 2.png",
-        "Tripexpert_Branding.png",
+        "Screenshot 2026-01-23 at 11.37.15AM.png",
+        "Tripexpert_appmock.png",
         "Tripexpert_Branding 2.png",
-        "Tripexpert_BrandingMock.png",
-        "Tripexpert_BrandingMock 2.png",
-        "Tripexpert_Mock.png",
-        "Tripexpert_Mock copy.png",
-        "V3_D_VenueShowPage.png",
-        "V3_D_VenuIndex.png",
-        "V3_VenueIndex.png",
-        "collapsed.png",
-        "Screenshot 2026-01-23 at 11.36.27 AM.png",
-        "Screenshot 2026-01-23 at 11.36.48 AM.png",
-        "Screenshot 2026-01-23 at 11.36.55 AM.png",
-        "Screenshot 2026-01-23 at 11.37.15 AM.png"
+        "Tripexpert_Appdesign.png"
       ]
     },
     {
@@ -182,24 +139,11 @@
       "date": "2020",
       "category": "Branding",
       "description": "Advertisement and branding work for Movado watches. A modern take on classic timepiece marketing, blending minimalist design with bold visual statements.",
-      "thumbnail": "Movado_Mock_Advert.png",
+      "thumbnail": "Movado_Red_MagazineSpread.png",
       "images": [
         "Movado_Mock_Advert.png",
-        "Movado_Red_MagazineSpread.png",
         "Movado_Minimal_Ad.png",
         "Movado_Edge_Red_Advert.png"
-      ]
-    },
-    {
-      "id": "newlabs",
-      "title": "New Labs",
-      "date": "2020",
-      "category": "Digital",
-      "description": "Digital design work for New Labs, a community of entrepreneurs and innovators working to solve the world's biggest challenges.",
-      "thumbnail": "NewLab_Web_02.png",
-      "images": [
-        "NewLab_Web_02.png",
-        "NewLab_Articles_Web.png"
       ]
     },
     {
@@ -216,33 +160,20 @@
       ]
     },
     {
-      "id": "hbr",
-      "title": "Harvard Business Review",
+      "id": "newlabs",
+      "title": "New Labs",
       "date": "2020",
-      "category": "Editorial",
-      "description": "Editorial design work exploring typography, layout, and visual storytelling for Harvard Business Review.",
-      "thumbnail": "HBR_01.png",
+      "category": "Digital",
+      "description": "Digital design work for New Labs, a community of entrepreneurs and innovators working to solve the world's biggest challenges.",
+      "thumbnail": "Invisible.gif",
       "images": [
-        "HBR_01.png",
-        "HBR_02.png",
-        "HBR_03.png",
-        "HBR_04.png"
+        "Invisible.gif",
+        "NewLab_Web_02.png",
+        "NewLab_Articles_Web.png",
+        "NewLab_Article_Web.png"
       ]
     },
-    {
-      "id": "ploom",
-      "title": "Ploom",
-      "date": "2019",
-      "category": "Branding",
-      "description": "Brand identity and web design for Ploom, featuring a modern aesthetic with bold typography and clean visual language.",
-      "thumbnail": "Ploom_Chrome.png",
-      "images": [
-        "Ploom_Noise_Web.png",
-        "Ploom_Branding_Web.png",
-        "Ploom_Web_Mock_Clean.png"
-      ]
-    },
-    {
+        {
       "id": "crj",
       "title": "CRJ Publication",
       "date": "2018-2019",
@@ -260,7 +191,50 @@
         "CRJ_03_1800x1200_02.jpg",
         "CRJ_03_1800x1200_03.jpg",
         "CRJ_03_1800x1200_04.jpg",
-        "CRJ_03_1800x1200_05.jpg"
+        "CRJ_03_1800x1200_05.jpg",
+        "CRJ_03_1800x1200_06.jpg",
+        "CRJ_03_1800x1200_07.jpg",
+        "CRJ_03_1800x1200_08.jpg",
+        "CRJ_03_1800x1200_09.jpg",
+        "CRJ_03_1800x1200_10.jpg",
+        "CRJ_03_1800x1200_11.jpg",
+        "CRJ_03_1800x1200_12.jpg",
+        "CRJ_03_1800x1200_13.jpg",
+        "CRJ_03_1800x1200_14.jpg",
+        "CRJ_03_1800x1200_15.jpg",
+        "CRJ01_Spread_Web_1800x1200.jpg",
+        "CRJ_03_Web_1800x1200_20.jpg"
+      ]
+    },
+    {
+      "id": "hbr",
+      "title": "Harvard Business Review",
+      "date": "2020",
+      "category": "Editorial",
+      "description": "Editorial design work exploring typography, layout, and visual storytelling for Harvard Business Review.",
+      "thumbnail": "HBR_01.png",
+      "images": [
+        "HBR_01.png",
+        "HBR_01 copy.jpg",
+        "HBR_02.png",
+        "HBR_03.png",
+        "HBR_04.png",
+        "HBR_05 copy.jpg",
+        "HBR_06 copy.jpg"
+      ]
+    },
+    {
+      "id": "ploom",
+      "title": "Ploom",
+      "date": "2019",
+      "category": "Branding",
+      "description": "Brand identity and web design for Ploom, featuring a modern aesthetic with bold typography and clean visual language.",
+      "thumbnail": "Ploom_Chrome.png",
+      "images": [
+        "Ploom_Noise_Web.png",
+        "Ploom_Branding_Web.png",
+        "Ploom_Web_Mock_Clean.png",
+        "Ploom_WebsiteMockup_Option2.png"
       ]
     },
     {
@@ -276,7 +250,11 @@
         "DegreeShow_Projection_1800x1200_01.jpg",
         "DegreeShow_Projection_Web_1800x1200.jpg",
         "DegreeShow_Projection_Web_1800x1200_01.jpg",
-        "DegreeShow_Projection_Web_1800x1200_02.jpg"
+        "DegreeShow_Projection_Web_1800x1200_02.jpg",
+        "DegreeShow_Projection_Web_1800x1200_04.jpg",
+        "DegreeShowPoster_Web_1800x1200.jpg",
+        "DegreeShow_Postcard_Mockup_blackdouble copy.jpg",
+        "DegreeShow_Postcard_Mockups02 copy.jpg"
       ]
     },
     {
@@ -285,12 +263,14 @@
       "date": "2018",
       "category": "Exhibition",
       "description": "Exhibition work for Last Futures at Tramway Gallery, exploring themes of technology, typography, and the future through letterpress and digital media.",
-      "thumbnail": "LastFutures_Web_1800x1200.jpg",
+      "thumbnail": "LastFutures_Type_Web_1800x1200.jpg",
       "images": [
-        "LastFutures_Web_1800x1200.jpg",
+        "LastFutures_01_Web_1800x1200.jpg",
         "LastFutures_FullSize_Web_1800x1200.jpg",
+        "LastFutures_Web_1800x1200.jpg",
         "LastFutures_Type_Web_1800x1200.jpg",
-        "Letterpress_Web_1800x1200.jpg"
+        "Letterpress_Web_1800x1200.jpg",
+        "Letterpress_01_Web_1800x1200.jpg"
       ]
     },
     {
@@ -302,7 +282,8 @@
       "thumbnail": "AmbientType_01_Web_1800x1200.jpg",
       "images": [
         "AmbientType_01_Web_1800x1200.jpg",
-        "AmbientType_Web_1800x1200.jpg"
+        "AmbientType_Web_1800x1200.jpg",
+        "AmbientType01_Web_1800x1200.jpg"
       ]
     },
     {

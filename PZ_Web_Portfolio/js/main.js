@@ -106,7 +106,154 @@
       // Initialize gallery reveal
       initGalleryReveal();
 
+      // Initialize drag-and-drop reordering (localhost only)
+      initDragAndDrop(project);
     }
+  }
+
+  // ========================================
+  // Drag-and-Drop Image Reordering
+  // ========================================
+
+  function initDragAndDrop(project) {
+    // Only show on localhost
+    const host = window.location.hostname;
+    if (host !== 'localhost' && host !== '127.0.0.1') return;
+
+    const gallery = document.querySelector('.gallery-grid');
+    if (!gallery) return;
+
+    let editMode = false;
+    let draggedItem = null;
+
+    // Create edit mode controls
+    const controls = document.createElement('div');
+    controls.className = 'edit-mode-controls';
+    controls.innerHTML = `
+      <button type="button" class="edit-toggle-btn">Edit Order</button>
+      <button type="button" class="save-order-btn" style="display:none">Save Order</button>
+      <button type="button" class="cancel-order-btn" style="display:none">Cancel</button>
+      <span class="save-status"></span>
+    `;
+    document.body.appendChild(controls);
+
+    const editBtn = controls.querySelector('.edit-toggle-btn');
+    const saveBtn = controls.querySelector('.save-order-btn');
+    const cancelBtn = controls.querySelector('.cancel-order-btn');
+    const status = controls.querySelector('.save-status');
+
+    function toggleEditMode(on) {
+      editMode = on;
+      gallery.classList.toggle('edit-mode', on);
+      editBtn.style.display = on ? 'none' : '';
+      saveBtn.style.display = on ? '' : 'none';
+      cancelBtn.style.display = on ? '' : 'none';
+      status.textContent = '';
+
+      const items = gallery.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        item.draggable = on;
+        if (on) {
+          item.addEventListener('dragstart', handleDragStart);
+          item.addEventListener('dragend', handleDragEnd);
+          item.addEventListener('dragover', handleDragOver);
+          item.addEventListener('dragenter', handleDragEnter);
+          item.addEventListener('dragleave', handleDragLeave);
+          item.addEventListener('drop', handleDrop);
+        } else {
+          item.draggable = false;
+          item.removeEventListener('dragstart', handleDragStart);
+          item.removeEventListener('dragend', handleDragEnd);
+          item.removeEventListener('dragover', handleDragOver);
+          item.removeEventListener('dragenter', handleDragEnter);
+          item.removeEventListener('dragleave', handleDragLeave);
+          item.removeEventListener('drop', handleDrop);
+        }
+      });
+    }
+
+    function handleDragStart(e) {
+      draggedItem = this;
+      this.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleDragEnd() {
+      this.classList.remove('dragging');
+      gallery.querySelectorAll('.gallery-item').forEach(item => {
+        item.classList.remove('drag-over');
+      });
+      draggedItem = null;
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    }
+
+    function handleDragEnter(e) {
+      e.preventDefault();
+      if (this !== draggedItem) {
+        this.classList.add('drag-over');
+      }
+    }
+
+    function handleDragLeave() {
+      this.classList.remove('drag-over');
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      this.classList.remove('drag-over');
+      if (draggedItem && draggedItem !== this) {
+        const items = [...gallery.querySelectorAll('.gallery-item')];
+        const fromIndex = items.indexOf(draggedItem);
+        const toIndex = items.indexOf(this);
+        if (fromIndex < toIndex) {
+          gallery.insertBefore(draggedItem, this.nextSibling);
+        } else {
+          gallery.insertBefore(draggedItem, this);
+        }
+      }
+    }
+
+    editBtn.addEventListener('click', () => toggleEditMode(true));
+    cancelBtn.addEventListener('click', () => {
+      // Reload to restore original order
+      window.location.reload();
+    });
+
+    saveBtn.addEventListener('click', async () => {
+      const items = gallery.querySelectorAll('.gallery-item img');
+      const images = [...items].map(img => {
+        const src = img.getAttribute('src');
+        // Strip any path prefix, keep just filename
+        return src.split('/').pop();
+      });
+
+      const payload = { projectId: project.id, images };
+      console.log('Saving order:', payload);
+      status.textContent = 'Saving...';
+      try {
+        const res = await fetch('http://localhost:3001/save-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error(await res.text());
+        status.textContent = 'Saved!';
+        status.style.color = '#2e7d32';
+
+        // Update lightbox image array to match new order
+        initLightbox(images, '');
+
+        setTimeout(() => toggleEditMode(false), 1200);
+      } catch (err) {
+        console.error('Save order failed:', err);
+        status.textContent = 'Error: ' + err.message;
+        status.style.color = '#c62828';
+      }
+    });
   }
 
   // ========================================
@@ -232,52 +379,6 @@
   }
 
   // ========================================
-  // Custom Cursor
-  // ========================================
-
-  function initCustomCursor() {
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-
-    const cursor = document.createElement('img');
-    cursor.src = (document.querySelector('link[rel="icon"]')?.href) || '';
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = 'position:fixed;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:99999;image-rendering:pixelated;opacity:0;';
-    document.body.appendChild(cursor);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    // Show cursor on first interaction
-    function showCursor(e) {
-      mouseX = e.clientX - 9;
-      mouseY = e.clientY - 9;
-      cursorX = mouseX;
-      cursorY = mouseY;
-      cursor.style.left = cursorX + 'px';
-      cursor.style.top = cursorY + 'px';
-      cursor.style.opacity = '1';
-      document.removeEventListener('mousemove', showCursor);
-      document.addEventListener('mousemove', trackCursor);
-    }
-
-    function trackCursor(e) {
-      mouseX = e.clientX - 9;
-      mouseY = e.clientY - 9;
-    }
-
-    document.addEventListener('mousemove', showCursor);
-
-    function animate() {
-      cursorX += (mouseX - cursorX) * 0.15;
-      cursorY += (mouseY - cursorY) * 0.15;
-      cursor.style.left = cursorX + 'px';
-      cursor.style.top = cursorY + 'px';
-      requestAnimationFrame(animate);
-    }
-    animate();
-  }
-
-  // ========================================
   // Page Transitions
   // ========================================
 
@@ -309,10 +410,6 @@
       overlay.classList.remove('hidden');
       overlay.classList.add('active');
 
-      // Hide custom cursor during transition
-      const cursorEl = document.querySelector('.custom-cursor');
-      if (cursorEl) cursorEl.style.opacity = '0';
-
       setTimeout(() => {
         window.location.href = href;
       }, 400);
@@ -328,7 +425,6 @@
     renderProjectPage();
     initHeaderScroll();
     initPageTransitions();
-    initCustomCursor();
   });
 
 })();
