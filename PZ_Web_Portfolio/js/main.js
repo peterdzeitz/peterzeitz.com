@@ -45,7 +45,6 @@
       const card = document.createElement('a');
       card.href = `projects/${project.id}/`;
       card.className = 'project-card';
-      card.dataset.projectId = project.id;
       card.innerHTML = `
         <div class="project-card-image-wrap">
           <img src="projects/${project.id}/${project.thumbnail}" alt="${project.title}" loading="lazy">
@@ -57,9 +56,6 @@
       `;
       grid.appendChild(card);
     });
-
-    // Initialize drag-and-drop reordering (localhost only)
-    initGridDragAndDrop();
   }
 
   // ========================================
@@ -164,18 +160,6 @@
           item.addEventListener('dragenter', handleDragEnter);
           item.addEventListener('dragleave', handleDragLeave);
           item.addEventListener('drop', handleDrop);
-          // Add remove button
-          if (!item.querySelector('.remove-btn')) {
-            const removeBtn = document.createElement('button');
-            removeBtn.type = 'button';
-            removeBtn.className = 'remove-btn';
-            removeBtn.innerHTML = '&times;';
-            removeBtn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              item.remove();
-            });
-            item.appendChild(removeBtn);
-          }
         } else {
           item.draggable = false;
           item.removeEventListener('dragstart', handleDragStart);
@@ -184,8 +168,6 @@
           item.removeEventListener('dragenter', handleDragEnter);
           item.removeEventListener('dragleave', handleDragLeave);
           item.removeEventListener('drop', handleDrop);
-          const removeBtn = item.querySelector('.remove-btn');
-          if (removeBtn) removeBtn.remove();
         }
       });
     }
@@ -268,164 +250,6 @@
         setTimeout(() => toggleEditMode(false), 1200);
       } catch (err) {
         console.error('Save order failed:', err);
-        status.textContent = 'Error: ' + err.message;
-        status.style.color = '#c62828';
-      }
-    });
-  }
-
-  // ========================================
-  // Drag-and-Drop Project Grid Reordering
-  // ========================================
-
-  function initGridDragAndDrop() {
-    // Only show on localhost
-    const host = window.location.hostname;
-    if (host !== 'localhost' && host !== '127.0.0.1') return;
-
-    const grid = document.querySelector('.projects-grid');
-    if (!grid) return;
-
-    let editMode = false;
-    let draggedItem = null;
-
-    // Create edit mode controls
-    const controls = document.createElement('div');
-    controls.className = 'edit-mode-controls';
-    controls.innerHTML = `
-      <button type="button" class="edit-toggle-btn">Edit Order</button>
-      <button type="button" class="save-order-btn" style="display:none">Save Order</button>
-      <button type="button" class="cancel-order-btn" style="display:none">Cancel</button>
-      <span class="save-status"></span>
-    `;
-    document.body.appendChild(controls);
-
-    const editBtn = controls.querySelector('.edit-toggle-btn');
-    const saveBtn = controls.querySelector('.save-order-btn');
-    const cancelBtn = controls.querySelector('.cancel-order-btn');
-    const status = controls.querySelector('.save-status');
-
-    function toggleEditMode(on) {
-      editMode = on;
-      grid.classList.toggle('edit-mode', on);
-      editBtn.style.display = on ? 'none' : '';
-      saveBtn.style.display = on ? '' : 'none';
-      cancelBtn.style.display = on ? '' : 'none';
-      status.textContent = '';
-
-      const cards = grid.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        card.draggable = on;
-        if (on) {
-          card.addEventListener('dragstart', handleDragStart);
-          card.addEventListener('dragend', handleDragEnd);
-          card.addEventListener('dragover', handleDragOver);
-          card.addEventListener('dragenter', handleDragEnter);
-          card.addEventListener('dragleave', handleDragLeave);
-          card.addEventListener('drop', handleDrop);
-          card.addEventListener('click', preventNavigation, true);
-          // Add remove button
-          if (!card.querySelector('.remove-btn')) {
-            const removeBtn = document.createElement('button');
-            removeBtn.type = 'button';
-            removeBtn.className = 'remove-btn';
-            removeBtn.innerHTML = '&times;';
-            removeBtn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              card.remove();
-            });
-            card.appendChild(removeBtn);
-          }
-        } else {
-          card.draggable = false;
-          card.removeEventListener('dragstart', handleDragStart);
-          card.removeEventListener('dragend', handleDragEnd);
-          card.removeEventListener('dragover', handleDragOver);
-          card.removeEventListener('dragenter', handleDragEnter);
-          card.removeEventListener('dragleave', handleDragLeave);
-          card.removeEventListener('drop', handleDrop);
-          card.removeEventListener('click', preventNavigation, true);
-          const removeBtn = card.querySelector('.remove-btn');
-          if (removeBtn) removeBtn.remove();
-        }
-      });
-    }
-
-    function preventNavigation(e) {
-      if (e.target.closest('.remove-btn')) return;
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    function handleDragStart(e) {
-      draggedItem = this;
-      this.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-    }
-
-    function handleDragEnd() {
-      this.classList.remove('dragging');
-      grid.querySelectorAll('.project-card').forEach(card => {
-        card.classList.remove('drag-over');
-      });
-      draggedItem = null;
-    }
-
-    function handleDragOver(e) {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-    }
-
-    function handleDragEnter(e) {
-      e.preventDefault();
-      if (this !== draggedItem) {
-        this.classList.add('drag-over');
-      }
-    }
-
-    function handleDragLeave() {
-      this.classList.remove('drag-over');
-    }
-
-    function handleDrop(e) {
-      e.preventDefault();
-      this.classList.remove('drag-over');
-      if (draggedItem && draggedItem !== this) {
-        const cards = [...grid.querySelectorAll('.project-card')];
-        const fromIndex = cards.indexOf(draggedItem);
-        const toIndex = cards.indexOf(this);
-        if (fromIndex < toIndex) {
-          grid.insertBefore(draggedItem, this.nextSibling);
-        } else {
-          grid.insertBefore(draggedItem, this);
-        }
-      }
-    }
-
-    editBtn.addEventListener('click', () => toggleEditMode(true));
-    cancelBtn.addEventListener('click', () => {
-      window.location.reload();
-    });
-
-    saveBtn.addEventListener('click', async () => {
-      const cards = grid.querySelectorAll('.project-card');
-      const projectOrder = [...cards].map(card => card.dataset.projectId);
-
-      console.log('Saving project order:', projectOrder);
-      status.textContent = 'Saving...';
-      try {
-        const res = await fetch('http://localhost:3001/save-project-order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ projectOrder })
-        });
-        if (!res.ok) throw new Error(await res.text());
-        status.textContent = 'Saved!';
-        status.style.color = '#2e7d32';
-        setTimeout(() => toggleEditMode(false), 1200);
-      } catch (err) {
-        console.error('Save project order failed:', err);
         status.textContent = 'Error: ' + err.message;
         status.style.color = '#c62828';
       }

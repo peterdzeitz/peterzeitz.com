@@ -51,47 +51,6 @@ const server = http.createServer((req, res) => {
         res.end('Server error: ' + err.message);
       }
     });
-  } else if (req.method === 'POST' && req.url === '/save-project-order') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const { projectOrder } = JSON.parse(body);
-
-        if (!Array.isArray(projectOrder)) {
-          res.writeHead(400);
-          res.end('Missing projectOrder array');
-          return;
-        }
-
-        const data = JSON.parse(fs.readFileSync(PROJECTS_FILE, 'utf-8'));
-        const projectMap = new Map(data.projects.map(p => [p.id, p]));
-        const reordered = [];
-
-        for (const id of projectOrder) {
-          const project = projectMap.get(id);
-          if (project) {
-            reordered.push(project);
-            projectMap.delete(id);
-          }
-        }
-        // Append any projects not in the order list
-        for (const project of projectMap.values()) {
-          reordered.push(project);
-        }
-
-        data.projects = reordered;
-        fs.writeFileSync(PROJECTS_FILE, JSON.stringify(data, null, 2) + '\n');
-
-        console.log(`Updated project order: ${projectOrder.join(', ')}`);
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ ok: true }));
-      } catch (err) {
-        console.error(err);
-        res.writeHead(500);
-        res.end('Server error: ' + err.message);
-      }
-    });
   } else {
     res.writeHead(404);
     res.end('Not found');

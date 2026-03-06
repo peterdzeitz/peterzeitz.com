@@ -9,9 +9,11 @@
       "thumbnail": "AvaxnetworkMM_Laptop_LT-LWL-04.png",
       "images": [
         "MacBook Pro 14.png",
-        "AvalancheBranding_Guidelines.gif",
         "VisualGuidelines_.png",
-        "Logo_1.png",
+         "Logo_1.png",
+        "Device=Desktop-1.png",
+        "Device=Desktop.png",
+        "AvalancheBranding_Guidelines.gif",
         "G7v0UFRWEAAV5kS.jpg",
         "G7z7keKWgAA6P4M.jpg"
       ]
@@ -40,13 +42,61 @@
       "thumbnail": "67115d9583204ff65e3b3b50_Frame 62.webp",
       "images": [
         "AVAX_NYC.gif",
+        "KeychainSummit_MM_Billboard_BB-NYC-08 2.png",
         "AvalancheSummit_NYCBlack.png",
-        "Avalanche_London_InnovationHouse.png",
-        "AVALANCHE_D1-7403972_07.55_SonyILCE-7M4_Z1Sgk46-1.webp",
-        "GrizUubWgAAPOqR-1.jpg",
+        "AvaxLondon_GIF.gif",
+        "54629457610_d75788d096_k.jpg",
+        "54629362683_ae475fb7b7_k.jpg",
+        "54629419965_54b018c43f_k (1).jpg",
+        "54629841906_b7ab7ce234_k.jpg",
         "67115d9583204ff65e3b3b50_Frame 62.webp"
       ]
     },
+    {
+      "id": "public-opinion",
+      "title": "Public Opinion",
+      "date": "2024",
+      "category": "Branding",
+      "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
+      "thumbnail": "Public_Opinion_Branding.png",
+      "images": [
+        "Public_Opinion_Branding-1.png",
+        "PublicOpinion_Branding_04-13.png",
+        "Public_Opinion_BrandingMerchYoutube.png",
+        "Public_Opinion_Branding.png",
+        "FinalPublic_Opinion_BrandingMerch.png"
+      ]
+    },
+      {
+      "id": "spotify",
+      "title": "Spotify Platform",
+      "date": "2025",
+      "category": "Branding",
+      "description": "Design work for Spotify Platform, exploring visual concepts and brand applications across digital touchpoints.",
+      "thumbnail": "Spotify_Podcast.gif",
+      "images": [
+        "PlatformFinal.png",
+        "Platform_Back copy.png",
+        "Spotify_Podcast.gif"
+      ]
+    },
+    
+    {
+      "id": "vimeo",
+      "title": "Vimeo",
+      "date": "2023",
+      "category": "Digital",
+      "description": "Design work for Vimeo OTT platform, including channel templates, page layouts, and promotional materials.",
+      "thumbnail": "Vimeo+Logo.png",
+      "images": [
+        "Vimeo_Outbound.gif",
+        "outsidetheFrame.png",
+        "Vimeo_LayoutLarge.png",
+        "Preview (4).png",
+        "Preview.png"      ]
+    },
+
+  
     {
       "id": "hyperbolic",
       "title": "Hyperbolic",
@@ -76,47 +126,6 @@
       ]
     },
     {
-      "id": "vimeo",
-      "title": "Vimeo",
-      "date": "2023",
-      "category": "Digital",
-      "description": "Design work for Vimeo OTT platform, including channel templates, page layouts, and promotional materials.",
-      "thumbnail": "Vimeo_LayoutLarge.png",
-      "images": [
-        "Vimeo_Outbound.gif",
-        "outsidetheFrame.png",
-        "Preview (4).png",
-        "Preview.png",
-        "Vimeo_LayoutLarge.png",
-        "Inbound23.gif"
-      ]
-    },
-    {
-      "id": "spotify",
-      "title": "Spotify Platform",
-      "date": "2025",
-      "category": "Branding",
-      "description": "Design work for Spotify Platform, exploring visual concepts and brand applications across digital touchpoints.",
-      "thumbnail": "Spotify_Podcast.gif",
-      "images": [
-        "PlatformFinal.png",
-        "Platform_Back copy.png",
-        "Spotify_Podcast.gif"
-      ]
-    },
-    {
-      "id": "fluidity-summit",
-      "title": "Fluidity Summit",
-      "date": "2019",
-      "category": "Event Design",
-      "description": "Event branding and visual design for Fluidity Summit, a conference exploring the future of tokenized assets and blockchain technology.",
-      "thumbnail": "Fluidity_Summit_Gradient.png",
-      "images": [
-        "Fluidity_Summit_Gradient.png",
-        "FluiditySummit_BillTai_1800x1200.png"
-      ]
-    },
-    {
       "id": "tripexpert",
       "title": "Tripexpert",
       "date": "2026",
@@ -133,6 +142,7 @@
         "Tripexpert_Appdesign.png"
       ]
     },
+
     {
       "id": "movado",
       "title": "Movado",
@@ -146,6 +156,18 @@
         "Movado_Edge_Red_Advert.png"
       ]
     },
+                {
+      "id": "cadence",
+      "title": "Cadence",
+      "date": "2025",
+      "category": "Branding",
+      "description": "Assisted with the layout and design of Cadence's 2026 Outcomes report focusing on Senior care.",
+      "thumbnail": "Cadence_OutcomesReport2026.png",
+      "images": [
+        "Cadence_LongScroll.png",
+        "Cadence_Calc.png"
+      ]
+    },
     {
       "id": "summer-defi",
       "title": "Summer DeFi",
@@ -156,7 +178,9 @@
       "images": [
         "Smmer_DeFi_Brooklyn_Tilted.png",
         "SummerDefi_Repeated_BW_Contrast.png",
-        "SummerDefi2019_BW.png"
+        "SummerDefi2019_BW.png",
+        "Fluidity_Summit_Gradient.jpg",
+        "FluiditySummit_BillTai_1800x1200.png"
       ]
     },
     {
@@ -183,27 +207,20 @@
       "images": [
         "CRJ01_Web_1800x1200.jpg",
         "CRJ01_Cover_Web_1800x1200.jpg",
-        "CRJ01_SpreadLarge_Web_1800x1200.jpg",
         "CRJ_02_Web_1800x1200.jpg",
         "CRJ_02_Web_1800x1200_Contents.jpg",
         "CRJ_02_Web_1800x1200_Spread01.jpg",
+        "CRJ_03_Web_1800x1200_20.jpg",
         "CRJ_03_1800x1200_01.jpg",
         "CRJ_03_1800x1200_02.jpg",
         "CRJ_03_1800x1200_03.jpg",
         "CRJ_03_1800x1200_04.jpg",
         "CRJ_03_1800x1200_05.jpg",
         "CRJ_03_1800x1200_06.jpg",
-        "CRJ_03_1800x1200_07.jpg",
-        "CRJ_03_1800x1200_08.jpg",
-        "CRJ_03_1800x1200_09.jpg",
-        "CRJ_03_1800x1200_10.jpg",
-        "CRJ_03_1800x1200_11.jpg",
-        "CRJ_03_1800x1200_12.jpg",
         "CRJ_03_1800x1200_13.jpg",
         "CRJ_03_1800x1200_14.jpg",
-        "CRJ_03_1800x1200_15.jpg",
-        "CRJ01_Spread_Web_1800x1200.jpg",
-        "CRJ_03_Web_1800x1200_20.jpg"
+        "CRJ_03_1800x1200_15.jpg"
+        
       ]
     },
     {
@@ -212,15 +229,14 @@
       "date": "2020",
       "category": "Editorial",
       "description": "Editorial design work exploring typography, layout, and visual storytelling for Harvard Business Review.",
-      "thumbnail": "HBR_01.png",
+      "thumbnail": "HBR_03.png",
       "images": [
-        "HBR_01.png",
-        "HBR_01 copy.jpg",
-        "HBR_02.png",
-        "HBR_03.png",
-        "HBR_04.png",
+        "HBR_06 copy.jpg",
         "HBR_05 copy.jpg",
-        "HBR_06 copy.jpg"
+        "HBR_04.png",
+        "HBR_03.png",
+        "HBR_02.png",
+        "HBR_01.png"
       ]
     },
     {
@@ -247,14 +263,9 @@
       "images": [
         "DegreeShowPoster_Web_1800x1200.gif",
         "DegreeShow_PostCards_Web_1800x1200.jpg",
+         "DegreeShow_Projection_Web_1800x1200_02.jpg",
         "DegreeShow_Projection_1800x1200_01.jpg",
-        "DegreeShow_Projection_Web_1800x1200.jpg",
-        "DegreeShow_Projection_Web_1800x1200_01.jpg",
-        "DegreeShow_Projection_Web_1800x1200_02.jpg",
-        "DegreeShow_Projection_Web_1800x1200_04.jpg",
-        "DegreeShowPoster_Web_1800x1200.jpg",
-        "DegreeShow_Postcard_Mockup_blackdouble copy.jpg",
-        "DegreeShow_Postcard_Mockups02 copy.jpg"
+        "DegreeShow_Projection_Web_1800x1200.jpg"
       ]
     },
     {
@@ -263,14 +274,12 @@
       "date": "2018",
       "category": "Exhibition",
       "description": "Exhibition work for Last Futures at Tramway Gallery, exploring themes of technology, typography, and the future through letterpress and digital media.",
-      "thumbnail": "LastFutures_Type_Web_1800x1200.jpg",
+      "thumbnail": "LastFuturesWhite_Type_Web_1800x1200.png",
       "images": [
+        "FutureLabs_Poster.png",
         "LastFutures_01_Web_1800x1200.jpg",
-        "LastFutures_FullSize_Web_1800x1200.jpg",
-        "LastFutures_Web_1800x1200.jpg",
-        "LastFutures_Type_Web_1800x1200.jpg",
-        "Letterpress_Web_1800x1200.jpg",
-        "Letterpress_01_Web_1800x1200.jpg"
+        "LastFuturesWhite_Type_Web_1800x1200.png",
+        "Letterpress_Web_1800x1200.jpg"
       ]
     },
     {
@@ -282,8 +291,10 @@
       "thumbnail": "AmbientType_01_Web_1800x1200.jpg",
       "images": [
         "AmbientType_01_Web_1800x1200.jpg",
-        "AmbientType_Web_1800x1200.jpg",
-        "AmbientType01_Web_1800x1200.jpg"
+        "CustomType.png",
+        "Excellent.png",
+        "Excellent_detail.png",
+        "Letterpress_Web_1800x1200.jpg"
       ]
     },
     {
