@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
   color: #1a1a1a;
   line-height: 1.6;
@@ -33,11 +33,23 @@ img {
 }
 
 /* ========================================
+   Fonts
+   ======================================== */
+
+@font-face {
+  font-family: "WhyteInktrap";
+  src: url("../fonts/WhyteInktrap-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
    Typography
    ======================================== */
 
 h1, h2, h3 {
-  font-weight: 400;
+  font-family: "WhyteInktrap", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2;
 }
 
@@ -77,28 +89,20 @@ h3 {
 }
 
 .site-title {
+  font-family: "WhyteInktrap", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #1a1a1a;
   letter-spacing: 0;
-  transition: letter-spacing 0.4s ease;
-}
-
-.site-title:hover {
-  letter-spacing: 0.12em;
 }
 
 .site-nav a {
+  font-family: "WhyteInktrap", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1a1a1a;
   margin-left: 2rem;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  transition: letter-spacing 0.4s ease;
-}
-
-.site-nav a:hover {
-  letter-spacing: 0.3em;
 }
 
 /* ========================================
@@ -111,17 +115,13 @@ h3 {
   color: #1a1a1a;
 }
 
-.intro-content {
-  max-width: 900px;
-}
-
 .intro-headline {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.01em;
   margin-bottom: 2.5rem;
-  max-width: 560px;
+  max-width: 800px;
 }
 
 .intro-bio {
@@ -138,16 +138,7 @@ h3 {
 }
 
 .intro-links a {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.35;
-  transition: letter-spacing 0.4s ease, opacity 0.2s ease;
-}
-
-.intro-links a:hover {
-  letter-spacing: 0.3em;
-  opacity: 1;
+  color: #1a1a1a;
 }
 
 /* ========================================
@@ -260,7 +251,6 @@ h3 {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
   gap: 0 4rem;
 }
 
@@ -271,27 +261,28 @@ h3 {
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.project-info {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.5;
+  max-width: 480px;
 }
 
 .project-meta {
-  grid-column: 2;
-  grid-row: 2;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   opacity: 0.4;
-}
-
-.project-description {
-  grid-column: 2;
-  grid-row: 1;
-  font-size: 0.85rem;
-  line-height: 1.7;
-  opacity: 0.5;
-  max-width: 480px;
-  align-self: end;
-  margin-bottom: 0.75rem;
+  margin-top: 1rem;
 }
 
 /* Project Gallery */
@@ -328,6 +319,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: "WhyteInktrap", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1a1a1a;
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -335,19 +327,8 @@ h3 {
   padding: 0;
   background: none;
   border-radius: 0;
-  opacity: 0.5;
-  transition: letter-spacing 0.4s ease, opacity 0.2s ease;
 }
 
-.back-button:hover {
-  letter-spacing: 0.3em;
-  opacity: 1;
-}
-
-.back-button svg {
-  width: 14px;
-  height: 14px;
-}
 
 /* ========================================
    Lightbox
@@ -475,8 +456,8 @@ h3 {
     padding: 1rem;
   }
 
-  .site-nav a {
-    margin-left: 1rem;
+  .site-nav {
+    display: none;
   }
 
   .projects-grid {
@@ -625,36 +606,32 @@ h3 {
 
 .marquee-demo {
   background: #fff;
-  padding: 6rem 0 0;
+  padding-top: 2rem;
 }
 
 .footer-icons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  padding-bottom: 4.5rem;
+  padding: 0rem 0 8rem;
 }
 
 .footer-icons a {
   color: #1a1a1a;
-  opacity: 0.35;
-  transition: opacity 0.2s ease;
-}
-
-.footer-icons a:hover {
-  opacity: 1;
 }
 
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
+  padding: 0.5rem 0;
 }
 
 .marquee-track {
   display: inline-block;
   white-space: nowrap;
+  font-family: "WhyteInktrap", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(2rem, 6vw, 5rem);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
   color: #1a1a1a;
@@ -681,6 +658,10 @@ h3 {
 @media (max-width: 1024px) {
   .marquee-track {
     font-size: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  .footer-icons {
+    padding: 0 0 3rem;
   }
 }
 
