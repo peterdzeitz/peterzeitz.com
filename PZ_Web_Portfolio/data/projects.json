@@ -13,7 +13,6 @@
          "Logo_1.png",
         "Device=Desktop-1.png",
         "Device=Desktop.png",
-        "AvalancheBranding_Guidelines.gif",
         "G7v0UFRWEAAV5kS.jpg",
         "G7z7keKWgAA6P4M.jpg"
       ]
@@ -89,11 +88,11 @@
       "description": "Design work for Vimeo OTT platform, including channel templates, page layouts, and promotional materials.",
       "thumbnail": "Vimeo+Logo.png",
       "images": [
+        "OutsidetheFrame_Vimeo.png",
         "Vimeo_Outbound.gif",
         "outsidetheFrame.png",
-        "Vimeo_LayoutLarge.png",
-        "Preview (4).png",
-        "Preview.png"      ]
+        "Vimeo_LayoutLarge.png" 
+         ]
     },
 
   
@@ -105,24 +104,9 @@
       "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
       "thumbnail": "Hyperbolic.png",
       "images": [
-        "Hyperbolic_AmbassadorAnnouncement.png",
-        "Hyperbolic_AmbassadorAnnouncement-1.png",
-        "Hyperbolic_AmbassadorAnnouncement-2.png",
-        "Hyperbolic_AmbassadorAnnouncement-3.png",
-        "Hyperbolic_AmbassadorAnnouncement-4.png",
-        "Hyperbolic_AmbassadorAnnouncement-5.png",
-        "Hyperbolic_AmbassadorAnnouncement-6.png",
-        "Hyperbolic_AmbassadorAnnouncement-7.png",
-        "Hyperbolic_AmbassadorAnnouncement-8.png",
-        "Hyperbolic_AmbassadorAnnouncement-9.png",
-        "Hyperbolic_AmbassadorAnnouncement-10.png",
-        "Hyperbolic_AmbassadorAnnouncement-11.png",
-        "Hyperbolic_AmbassadorAnnouncement-12.png",
-        "Hyperbolic_AmbassadorAnnouncement-13.png",
-        "Hyperbolic_AmbassadorAnnouncement-14.png",
-        "Hyperbolic_AmbassadorAnnouncement-15.png",
-        "Hyperbolic_AmbassadorAnnouncement-16.png",
-        "Hyperbolic_AmbassadorAnnouncement-17.png"
+        "hyperbolic/Hyperbolic_02.png",
+        "hyperbolic/Hyperbolic_02.png"
+
       ]
     },
     {
