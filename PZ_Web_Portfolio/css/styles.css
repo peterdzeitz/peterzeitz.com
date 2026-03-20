@@ -124,6 +124,10 @@ h3 {
   max-width: 800px;
 }
 
+.intro-headline a:hover {
+  text-decoration: underline;
+}
+
 .intro-bio {
   font-size: 1rem;
   line-height: 1.7;
@@ -602,9 +606,9 @@ h3 {
 }
 
 .marquee-container {
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: visible;
   white-space: nowrap;
-  padding: 0.5rem 0;
 }
 
 .marquee-track {

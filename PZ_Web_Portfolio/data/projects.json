@@ -26,10 +26,10 @@
       "thumbnail": "PayStake_Core.png",
       "images": [
         "Core_Crop.gif",
-        "MM_Screen_SC-NYC2-04.png",
-        "Google_Core_Phone.png",
         "Billboard_MM_Billboard_BB-NYC-08.png",
-        "ControlDigital_StreetMock.png"
+        "ControlDigital_StreetMock.png",
+        "Google_Core_Phone.png",
+        "MM_Screen_SC-NYC2-04.png"
       ]
     },
     {
@@ -94,8 +94,6 @@
         "Vimeo_LayoutLarge.png" 
          ]
     },
-
-  
     {
       "id": "hyperbolic",
       "title": "Hyperbolic",
@@ -104,7 +102,7 @@
       "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
       "thumbnail": "Hyperbolic.png",
       "images": [
-        "Hyperbolic_02.png",
+        "Hyperbolic_01.png",
         "Hyperbolic_02.png"
 
       ]
