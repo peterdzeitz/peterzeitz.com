@@ -8,13 +8,20 @@
       "description": "Brand identity and marketing materials for Avalanche blockchain ecosystem, including summit event design, billboard campaigns, and digital assets.",
       "thumbnail": "AvaxnetworkMM_Laptop_LT-LWL-04.png",
       "images": [
-        "MacBook Pro 14.png",
+        "Avalanche_Laptop.png",
         "VisualGuidelines_.png",
          "Logo_1.png",
         "Device=Desktop-1.png",
         "Device=Desktop.png",
-        "G7v0UFRWEAAV5kS.jpg",
-        "G7z7keKWgAA6P4M.jpg"
+        "67115d9583204ff65e3b3b50_Frame 62.webp",
+        "AVAX_NYC.gif",
+        "KeychainSummit_MM_Billboard_BB-NYC-08 2.png",
+        "AvalancheSummit_NYCBlack.png",
+        "AvaxLondon_GIF.gif",
+        "54629457610_d75788d096_k.jpg",
+        "54629362683_ae475fb7b7_k.jpg",
+        "54629419965_54b018c43f_k (1).jpg",
+        "54629841906_b7ab7ce234_k.jpg"
       ]
     },
     {
@@ -26,37 +33,19 @@
       "thumbnail": "PayStake_Core.png",
       "images": [
         "Core_Crop.gif",
-        "MM_Screen_SC-NYC2-04.png",
-        "Google_Core_Phone.png",
         "Billboard_MM_Billboard_BB-NYC-08.png",
-        "ControlDigital_StreetMock.png"
+        "ControlDigital_StreetMock.png",
+        "Core_GoogleAccount.png",
+        "MM_Screen_SC-NYC2-04.png"
       ]
     },
-    {
-      "id": "avalanche-summit",
-      "title": "Avalanche Summit",
-      "date": "2024",
-      "category": "Event Design",
-      "description": "Event branding and promotional materials for Avalanche Summit, including billboard campaigns, venue design, and digital assets.",
-      "thumbnail": "67115d9583204ff65e3b3b50_Frame 62.webp",
-      "images": [
-        "AVAX_NYC.gif",
-        "KeychainSummit_MM_Billboard_BB-NYC-08 2.png",
-        "AvalancheSummit_NYCBlack.png",
-        "AvaxLondon_GIF.gif",
-        "54629457610_d75788d096_k.jpg",
-        "54629362683_ae475fb7b7_k.jpg",
-        "54629419965_54b018c43f_k (1).jpg",
-        "54629841906_b7ab7ce234_k.jpg",
-        "67115d9583204ff65e3b3b50_Frame 62.webp"
-      ]
-    },
+    
     {
       "id": "public-opinion",
       "title": "Public Opinion",
       "date": "2024",
       "category": "Branding",
-      "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
+      "description": "Visual identity and ambassador program materials for Public Opinion, featuring a reflexive logo and additional assets.",
       "thumbnail": "Public_Opinion_Branding.png",
       "images": [
         "Public_Opinion_Branding-1.png",
@@ -64,6 +53,20 @@
         "Public_Opinion_BrandingMerchYoutube.png",
         "Public_Opinion_Branding.png",
         "FinalPublic_Opinion_BrandingMerch.png"
+      ]
+    },
+      {
+      "id": "hyperbolic",
+      "title": "Hyperbolic",
+      "date": "2024",
+      "category": "Branding",
+      "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
+      "thumbnail": "Hyperbolic.png",
+      "images": 
+      [
+        "Hyperbolic_02.png",
+        "Hyperbolic_01.png"
+        
       ]
     },
       {
@@ -88,27 +91,21 @@
       "description": "Design work for Vimeo OTT platform, including channel templates, page layouts, and promotional materials.",
       "thumbnail": "Vimeo+Logo.png",
       "images": [
-        "OutsidetheFrame_Vimeo.png",
-        "Vimeo_Outbound.gif",
+        "Vimeo_LayoutLarge.png",
+        "Vimeo_UI.png",
+        "Vimeo_PublishUI.png",
+        "Vimeo_4k.png",
+        "Vimeo.png",
+        "Vimeo_Yoga_01.png",
+        "Vimeo_OOTF.png",
         "outsidetheFrame.png",
-        "Vimeo_LayoutLarge.png" 
+         "Vimeo_Outbound.gif",
+        "Vimeo_JoinInbound.png"
          ]
     },
 
   
-    {
-      "id": "hyperbolic",
-      "title": "Hyperbolic",
-      "date": "2024",
-      "category": "Branding",
-      "description": "Visual identity and ambassador program materials for Hyperbolic, featuring bold graphic design and promotional assets.",
-      "thumbnail": "Hyperbolic.png",
-      "images": [
-        "Hyperbolic_02.png",
-        "Hyperbolic_02.png"
-
-      ]
-    },
+    
     {
       "id": "tripexpert",
       "title": "Tripexpert",
@@ -148,8 +145,7 @@
       "description": "Assisted with the layout and design of Cadence's 2026 Outcomes report focusing on Senior care.",
       "thumbnail": "Cadence_OutcomesReport2026.png",
       "images": [
-        "Cadence_LongScroll.png",
-        "Cadence_Calc.png"
+        "Cadence_LongScroll.png"
       ]
     },
     {
@@ -231,10 +227,10 @@
       "description": "Brand identity and web design for Ploom, featuring a modern aesthetic with bold typography and clean visual language.",
       "thumbnail": "Ploom_Chrome.png",
       "images": [
-        "Ploom_Noise_Web.png",
-        "Ploom_Branding_Web.png",
         "Ploom_Web_Mock_Clean.png",
-        "Ploom_WebsiteMockup_Option2.png"
+        "Ploom_Noise_Web.png",
+        "Ploom_Branding_Web.png"
+       
       ]
     },
     {
