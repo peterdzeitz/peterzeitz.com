@@ -391,6 +391,14 @@
       overlay.classList.add('hidden');
     }, 100);
 
+    // Handle browser back/forward (bfcache)
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        overlay.classList.remove('active');
+        overlay.classList.add('hidden');
+      }
+    });
+
     // Intercept internal link clicks for fade-out transition
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href]');
