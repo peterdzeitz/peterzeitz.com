@@ -19,6 +19,7 @@ body {
   background-color: #fff;
   color: #1a1a1a;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a, button {
@@ -606,8 +607,7 @@ h3 {
 }
 
 .marquee-container {
-  overflow-x: visible;
-  overflow-y: visible;
+  overflow: hidden;
   white-space: nowrap;
 }
 
