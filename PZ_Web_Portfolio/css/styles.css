@@ -12,6 +12,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -336,6 +337,16 @@ h3 {
 
 
 /* ========================================
+   Scroll lock (iOS Safari-safe)
+   ======================================== */
+
+body.scroll-locked {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+/* ========================================
    Lightbox
    ======================================== */
 
@@ -483,6 +494,11 @@ h3 {
     opacity: 1 !important;
     transform: translateY(0) !important;
     padding-top: 0.2rem;
+  }
+
+  .project-card-title,
+  .project-card-category {
+    transform: translateY(0);
   }
 
   .project-card-title {

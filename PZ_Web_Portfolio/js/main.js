@@ -289,12 +289,17 @@
       currentIndex = index;
       lightboxImg.src = pathPrefix + images[currentIndex];
       lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      document.body.classList.add('scroll-locked');
+      document.body.style.top = `-${scrollY}px`;
     }
 
     function closeLightbox() {
+      const scrollY = Math.abs(parseInt(document.body.style.top || '0'));
+      document.body.classList.remove('scroll-locked');
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
       lightbox.classList.remove('active');
-      document.body.style.overflow = '';
     }
 
     function showPrev() {
