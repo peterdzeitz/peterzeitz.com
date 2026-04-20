@@ -12,6 +12,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
   background-color: #fff;
   color: #1a1a1a;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a, button {
@@ -335,6 +337,16 @@ h3 {
 
 
 /* ========================================
+   Scroll lock (iOS Safari-safe)
+   ======================================== */
+
+body.scroll-locked {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+/* ========================================
    Lightbox
    ======================================== */
 
@@ -484,6 +496,11 @@ h3 {
     padding-top: 0.2rem;
   }
 
+  .project-card-title,
+  .project-card-category {
+    transform: translateY(0);
+  }
+
   .project-card-title {
     font-size: 0.8rem;
     margin-bottom: 0.2rem;
@@ -606,8 +623,7 @@ h3 {
 }
 
 .marquee-container {
-  overflow-x: visible;
-  overflow-y: visible;
+  overflow: hidden;
   white-space: nowrap;
 }
 
